@@ -306,19 +306,29 @@ body, html {
     text-decoration: underline;
 }
 .customers {
-    background: url('images/pizza.jpg') no-repeat center center/cover;
+    position: relative; 
+    background: url('Omnifood Contents/back-customers.jpg') no-repeat center center/cover;
     padding: 100px 0;
     color: white;
     text-align: center;
-    background-color: black;
+    overflow: hidden; 
 }
-
+.customers::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
 .customers h2 {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
     margin-bottom: 50px;
-    position: relative;
+    position: relative; 
+    z-index: 2; 
 }
-
 .customers h2::after {
     content: "";
     display: block;
@@ -327,49 +337,42 @@ body, html {
     background-color: #e67e22;
     margin: 20px auto;
 }
-
 .customers-grid {
     display: flex;
     justify-content: space-around;
     gap: 40px;
     flex-wrap: wrap;
+    position: relative; 
+    z-index: 2; 
 }
-
 .customer {
-    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 8px;
     width: 30%;
-    box-shadow: 0 10px 20px rgba(255, 253, 253, 0.938);
 }
-
 .customer p {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
 }
-
 .quote-icon {
     font-size: 2rem;
     color: #e67e22;
     margin-right: 5px;
     vertical-align: middle;
 }
-
 .customer-author {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
 }
-
 .customer-author img {
     border-radius: 50%;
     width: 50px;
     height: 50px;
     margin-right: 15px;
 }
-
 .customer-author span {
     font-size: 1.1rem;
     font-weight: bold;
@@ -380,13 +383,13 @@ body, html {
   }
   .pricing-section h2 {
     margin-bottom: 40px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #333;
   }
   .pricing-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
   } 
   .pricing-card {
     background-color: #fff;
@@ -397,12 +400,12 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   } 
   .pricing-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #333;
     margin-bottom: 20px;
   }
   .price {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #f08e42;
   }
   .price span {
@@ -466,45 +469,43 @@ body, html {
   .contact-info {
     flex: 1;
   } 
-  .contact-form {
+  /* Styles for contact section */
+.contact-form {
     width: 90%;
     margin: 0 auto;
 }
-
-input[type=text],
-input[type=email],
-select,
-textarea {
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+input[type=text], input[type=email], select, textarea {
     width: 100%;
     padding: 7px;
     border-radius: 3px;
     border: 1px solid #ccc;
 }
-
-textarea: {
+textarea {
     height: 100px;
 }
-
 input[type=checkbox] {
     margin: 10px 5px 10px 0;
 }
-
-*:focus {outline: none;}
-
+*:focus {
+    outline: none;
+}
 .map-box {
     width: 100%;
     height: 560px;
     position: relative;
-    background-image: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100940.18159938995!2d-122.52000119922108!3d37.75767131490468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1728398923924!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>;
 }
-
-.map {
+iframe {
     width: 100%;
     height: 560px;
     position: relative;
     z-index: 0;
 }
-
 .form-box {
     position: absolute;
     width: 50%;
@@ -512,15 +513,26 @@ input[type=checkbox] {
     right: 0;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 10;
-    height: 500px;
+    height: auto;
     padding-top: 40px;
 }
+.form-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
- }
-    .contact-info, .map-container {
-      width: 100%;
-    }
-  }
+.flex-item-1 {
+    width: 33.3%;
+    justify-content: flex-start;
+}
+.flex-item-2 {
+    justify-content: flex-end;
+    width: 66.7%;
+}
+<div class="map-box">
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24433.452268754623!2d-76.283904!3d40.0490496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1728399125118!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="form-box">
+        <div class="row">
+        <h2>We're happy to hear from you</h2>
+     </div>
