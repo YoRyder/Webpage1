@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Lato', sans-serif;
+    height: 100%; 
+    overflow-x: hidden;
+}
+.header {
+    background-image: url('Omnifood Contents/hero.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.navbar {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 30px 60px; 
+    position: relative;
+    z-index: 2;
+}
+.navbar .logo img {
+    position: absolute; 
+    left: 60px; 
+    top: 30px;
+    width: 100px; 
+}
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase; 
+}
+.navbar .nav-links li a:hover {
+    color: #FFA500; 
+}
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 20%; 
+    transform: translateY(-50%); 
+    text-align: left; 
+    color: white;
+    z-index: 2;
+}
+.header-content h1 {
+    font-size: 40px; 
+    font-weight: 400; 
+    line-height: 1.4;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.header-content h1 span {
+    display: block;
+}
+.header-content a {
+    background-color: #FFA500; 
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px; 
+    display: inline-block;
+}
+.header-content a:hover {
+    background-color: #ff7b00; 
+}
+.header-content .secondary-btn {
+    background-color: transparent;
+    border: 2px solid #FFA500; 
+}
+.header-content .secondary-btn:hover {
+    background-color: #FFA500; 
+    color: white;
+}
+.hero-content {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+.hero-content h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: white;
+}
+.hero-buttons {
+    margin-top: 15px;
+}
+.hero-buttons .btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 30px;
+    margin: 5px;
+    background-color: transparent;
+    color: white;
+    transition: all 0.3s ease;
+}
+.hero {
+    height: 70vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px; 
+    background-color: white;
+}
+.hero h1 {
+    font-size: 32px;
+    color: #333;
+}
+.hero p {
+    font-size: 22px;
+    color: #666;
+}
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    background-color: white;
+}
+.feature-box {
+    text-align: center;
+    width: 22%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+.feature-box ion-icon {
+    font-size: 60px;
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+.feature-box h3 {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.feature-box p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.4;
+}
+.food-gallery {
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0;
+}
+.item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0; 
+}
+.item img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover; 
+   transform: scale(1.05); 
+   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.item img:hover {
+    transform: scale(1.15); 
+    opacity: 1;
+}
+.how-it-works {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f7f7f7; 
+}
+.how-it-works h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 40px;
+}
+.how-it-works-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 40px; 
+}
+.how-it-works-text {
+    width: 45%; 
+    text-align: left;
+}
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ff6600;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 23px;
+    margin-right: 20px;
+}
+.step p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+.how-it-works-image img {
+    width: 300px;
+    height: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.app-store-links {
+    margin-top: 40px;
+}
+.app-store-links .app-link {
+    width: 150px; 
+    margin: 0 20px; 
+}
+.cities-section {
+    text-align: center;
+    padding: 60px 0;
+    background-color: blanchedalmond;
+}
+.cities-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 40px;
+}
+.city {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.city img {
+    width: 100%;
+    border-radius: 8px;
+}
+.city h3 {
+    margin-top: 16px;
+    font-size: 1.8rem;
+    color: #333;
+}
+.city ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+}
+.city ul li {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #777;
+}
+.city ul li span {
+    margin-right: 8px;
+}
+.city ul li a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+.city ul li a:hover {
+    text-decoration: underline;
+}
+.customers {
+    background: url('images/pizza.jpg') no-repeat center center/cover;
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+.customers h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.customers h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #e67e22;
+    margin: 20px auto;
+}
+
+.customers-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.customer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 10px 20px rgba(255, 253, 253, 0.938);
+}
+
+.customer p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: #e67e22;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.customer-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.customer-author img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.customer-author span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.pricing-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  .pricing-section h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #333;
+  }
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  } 
+  .pricing-card {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    width: 280px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  } 
+  .pricing-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .price {
+    font-size: 2.5rem;
+    color: #f08e42;
+  }
+  .price span {
+    font-size: 1rem;
+  } 
+  .per-meal {
+    margin-bottom: 20px;
+    color: #999;
+  } 
+  .pricing-card ul {
+    list-style-type: none;
+    margin-bottom: 30px;
+  } 
+  .pricing-card ul li {
+    margin-bottom: 10px;
+  } 
+  .pricing-card ul li.disabled {
+    color: #ccc;
+    text-decoration: line-through;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f08e42;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #e27d36;
+  }
+  .premium {
+    border-color: #f08e42;
+  }
+  .pro {
+    border-color: #a7a7a7;
+  }
+  .starter {
+    border-color: #ddd;
+  }
+  @media (max-width: 768px) {
+    .pricing-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .pricing-card {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+  #contact {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .contact-info {
+    flex: 1;
+  } 
+  .contact-form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea: {
+    height: 100px;
+}
+
+input[type=checkbox] {
+    margin: 10px 5px 10px 0;
+}
+
+*:focus {outline: none;}
+
+.map-box {
+    width: 100%;
+    height: 560px;
+    position: relative;
+    background-image: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100940.18159938995!2d-122.52000119922108!3d37.75767131490468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1728398923924!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>;
+}
+
+.map {
+    width: 100%;
+    height: 560px;
+    position: relative;
+    z-index: 0;
+}
+
+.form-box {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    height: 500px;
+    padding-top: 40px;
+}
+}
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+ }
+    .contact-info, .map-container {
+      width: 100%;
+    }
+  }
